@@ -44,6 +44,7 @@ Route::resource('municipality', MunicipalityController::class);
 Route::resource('company', CompanyController::class);
 Route::resource('branche', BrancheController::class);
 Route::resource('useer', UseerController::class);
+Route::resource('category',CategoryController::class);
 
 
 Route::get('company/create/{id}', [CompanyController::class, 'getMunicipalities']);
