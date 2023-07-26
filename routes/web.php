@@ -45,14 +45,16 @@ Route::resource('company', CompanyController::class);
 Route::resource('branche', BrancheController::class);
 Route::resource('useer', UseerController::class);
 Route::resource('category',CategoryController::class);
+Route::resource('product',ProductController::class);
+
 
 
 Route::get('company/create/{id}', [CompanyController::class, 'getMunicipalities']);
 Route::get('branche/create/{id}', [BrancheController::class, 'getMunicipalities']);
 
 
-// Route::resource('category',CategoryController::class);
-// Route::resource('product',ProductController::class);
+
+
 // Route::resource('servicee',ServiceeController::class);
 // Route::resource('employee',EmployeeController::class);
 // Route::resource('student',StudentController::class);

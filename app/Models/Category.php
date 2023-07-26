@@ -19,4 +19,12 @@ class Category extends Model
 
     protected $fillable = ['name','description','iva','utility'];
     protected $guarded = ['id'];
+
+    //una categoría tiene muchos productos
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
 }
