@@ -59,3 +59,4 @@ Route::get('branche/create/{id}', [BrancheController::class, 'getMunicipalities'
 // Route::resource('employee',EmployeeController::class);
 // Route::resource('student',StudentController::class);
 // Route::resource('qualification',QualificationController::class);
+
