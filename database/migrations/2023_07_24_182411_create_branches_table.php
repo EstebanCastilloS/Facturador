@@ -22,7 +22,7 @@ class CreateBranchesTable extends Migration
             $table->string('email',45);
             $table->string('phone',10);
             $table->string('contact',45);
-            $table->timestamps();
+
 
             //llave foranea company
             $table->foreignId('company_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
@@ -32,6 +32,7 @@ class CreateBranchesTable extends Migration
             //llave foranea useer
             // $table->foreignId('useer_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
 
+            $table->timestamps();
         });
     }
 
