@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\IdentificationTypeController;
 use App\Http\Controllers\MunicipalityController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\QualificationController;
@@ -46,6 +47,7 @@ Route::resource('branche', BrancheController::class);
 Route::resource('useer', UseerController::class);
 Route::resource('category',CategoryController::class);
 Route::resource('product',ProductController::class);
+Route::resource('identification_type', IdentificationTypeController::class);
 
 
 
