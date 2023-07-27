@@ -16,12 +16,17 @@ class Provider extends Model
 
     public $timestamps = True;
 
-    protected $fillable = ['identification', 'name', 'address', 'email', 'phone', 'status', 'municipality_id'];
+    protected $fillable = ['identification', 'name', 'address', 'email', 'phone', 'status', 'municipality_id', 'company_id'];
     protected $guarded = ['id'];
 
     //Un proveedor pertenece a un municipio
     public function municipality()
     {
         return $this->belongsTo(Municipality::class);
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
     }
 }

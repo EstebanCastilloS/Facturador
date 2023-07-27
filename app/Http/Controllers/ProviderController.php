@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Provider;
 use App\Http\Requests\StoreProviderRequest;
 use App\Http\Requests\UpdateProviderRequest;
+use App\Models\Company;
 use App\Models\Municipality;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
@@ -28,6 +29,9 @@ class ProviderController extends Controller
             ->addColumn('municipality', function (Provider $provider) {
                 return $provider->municipality->name;
             })
+            ->addColumn('company', function (Provider $provider) {
+                return $provider->company->name;
+            })
             ->addColumn('edit', 'admin/provider/actions')
             ->rawColumns(['edit'])
             ->make(true);
@@ -44,7 +48,8 @@ class ProviderController extends Controller
     public function create()
     {
         $municipalities = Municipality::get();
-        return view('admin.provider.create', compact('municipalities'));
+        $companies = Company::get();
+        return view('admin.provider.create', compact('municipalities','companies'));
     }
 
     /**
@@ -56,6 +61,7 @@ class ProviderController extends Controller
     public function store(StoreProviderRequest $request)
     {
         $provider = new provider();
+        $provider->company_id = $request->company_id;
         $provider->municipality_id = $request->municipality_id;
         $provider->identification = $request->identification;
         $provider->name = $request->name;
@@ -88,7 +94,8 @@ class ProviderController extends Controller
     public function edit(Provider $provider)
     {
         $municipalities = Municipality::get();
-        return view('admin.provider.edit', compact('municipalities', 'provider'));
+        $companies = Company::get();
+        return view('admin.provider.edit', compact('municipalities', 'companies', 'provider'));
     }
 
     /**
@@ -100,6 +107,7 @@ class ProviderController extends Controller
      */
     public function update(UpdateProviderRequest $request, Provider $provider)
     {
+        $provider->company_id = $request->company_id;
         $provider->municipality_id = $request->municipality_id;
         $provider->identification = $request->identification;
         $provider->name = $request->name;

@@ -37,4 +37,10 @@ class Company extends Model
     {
         return $this->hasMany(Branche::class);
     }
+
+    //Una compañía tiene muchos proveedores
+    public function providers()
+    {
+        return $this->hasMany(Provider::class);
+    }
 }

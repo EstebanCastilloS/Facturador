@@ -1,4 +1,21 @@
 <div class="box-body row">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label for="company_id">Compañía</label>
+        <div class="select">
+            <select id="company_id" name="company_id" class="form-control selectpicker" data-live-search="true" required>
+                <option {{ ($provider->company_id ?? '') == '' ? "selected" : "" }} disabled>Seleccionar Compañía</option>
+                @foreach($companies as $company)
+                    @if($company->id == ($provider->company_id ?? ''))
+                        <option value="{{ $company->id }}" selected>{{ $company->name }}</option>
+                    @else
+                        <option value="{{ $company->id }}">{{ $company->name }}</option>
+                    @endif
+                @endforeach
+            </select>
+        </div>
+    </div>
+
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <label for="municipality_id">Municipio</label>
         <div class="select">

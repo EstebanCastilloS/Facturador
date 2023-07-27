@@ -18,6 +18,7 @@
                 <table class="table table-striped table-bordered table-condensed table-hover" id="providers">
                     <thead>
                         <tr>
+                            <th>Compañía</th>
                             <th>Municipio</th>
                             <th>Id</th>
                             <th>Identificación</th>
@@ -53,6 +54,7 @@ $(document).ready(function ()
             ajax: '{{ route('provider.index') }}',
             columns:
             [
+                {data: 'company'},
                 {data: 'municipality'},
                 {data: 'id'},
                 {data: 'identification'},
