@@ -36,4 +36,11 @@ class Municipality extends Model
     {
         return $this->hasMany(Branche::class);
     }
+
+    ///////////////////////////////////////////
+    //Un proveedor pertenece ha muchos municipios
+    public function providers()
+    {
+        return $this->hasMany(Provider::class);
+    }
 }

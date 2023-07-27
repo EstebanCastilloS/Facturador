@@ -8,6 +8,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\IdentificationTypeController;
 use App\Http\Controllers\MunicipalityController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProviderController;
 use App\Http\Controllers\QualificationController;
 use App\Http\Controllers\ServiceeController;
 use App\Http\Controllers\StudentController;
@@ -48,6 +49,7 @@ Route::resource('useer', UseerController::class);
 Route::resource('category',CategoryController::class);
 Route::resource('product',ProductController::class);
 Route::resource('identification_type', IdentificationTypeController::class);
+Route::resource('provider',ProviderController::class);
 
 
 
