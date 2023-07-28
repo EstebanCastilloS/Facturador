@@ -70,7 +70,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="form-group">
             <label for="email">Correo Elétronico</label>
-            <input type="text" name="email" class="form-control" value="{{ old('email', $provider->email ?? '') }}" placeholder="Correo Elétronico">
+            <input type="email" name="email" class="form-control" value="{{ old('email', $provider->email ?? '') }}" placeholder="Correo Elétronico">
         </div>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
