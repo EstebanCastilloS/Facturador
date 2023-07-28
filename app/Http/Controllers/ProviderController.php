@@ -6,6 +6,7 @@ use App\Models\Provider;
 use App\Http\Requests\StoreProviderRequest;
 use App\Http\Requests\UpdateProviderRequest;
 use App\Models\Company;
+use App\Models\Department;
 use App\Models\IdentificationType;
 use App\Models\Municipality;
 use Illuminate\Http\Request;
@@ -36,6 +37,9 @@ class ProviderController extends Controller
             ->addColumn('identification_type', function (Provider $provider) {
                 return $provider->identificationType->name;
             })
+            ->addColumn('Department', function (Provider $provider) {
+                return $provider->municipality->department->name;
+            })
             ->addColumn('edit', 'admin/provider/actions')
             ->rawColumns(['edit'])
             ->make(true);
@@ -54,7 +58,8 @@ class ProviderController extends Controller
         $municipalities = Municipality::get();
         $companies = Company::get();
         $identification_types = IdentificationType::get();
-        return view('admin.provider.create', compact('municipalities','companies','identification_types'));
+        $departments = Department::get();
+        return view('admin.provider.create', compact('municipalities','companies','identification_types','departments'));
     }
 
     /**
@@ -102,7 +107,8 @@ class ProviderController extends Controller
         $municipalities = Municipality::get();
         $companies = Company::get();
         $identification_types = IdentificationType::get();
-        return view('admin.provider.edit', compact('municipalities', 'companies','identification_types', 'provider'));
+        $departments = Department::get();
+        return view('admin.provider.edit', compact('municipalities', 'companies','identification_types','departments', 'provider'));
     }
 
     /**
@@ -137,5 +143,15 @@ class ProviderController extends Controller
     public function destroy(Provider $provider)
     {
         //
+    }
+
+    public function getmunicipalities(Request $request, $id)
+    {
+        if($request)
+        {
+            $municipalities = municipality::where('department_id', '=', $id)->get();
+
+            return response()->json($municipalities);
+        }
     }
 }

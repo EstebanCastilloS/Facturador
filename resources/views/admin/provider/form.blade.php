@@ -16,6 +16,17 @@
         </div>
     </div>
 
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="form-group">
+        <label for="department_id">Departamento</label>
+            <select name="department_id" class="form-control" id="department_id">
+                @foreach($departments as $dep)
+                        <option value="{{ $dep->id }}">{{ $dep->name }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <label for="municipality_id">Municipio</label>
         <div class="select">

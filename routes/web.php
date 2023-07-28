@@ -55,6 +55,7 @@ Route::resource('provider',ProviderController::class);
 
 Route::get('company/create/{id}', [CompanyController::class, 'getMunicipalities']);
 Route::get('branche/create/{id}', [BrancheController::class, 'getMunicipalities']);
+Route::get('provider/create/{id}', [ProviderController::class, 'getMunicipalities']);
 
 
 

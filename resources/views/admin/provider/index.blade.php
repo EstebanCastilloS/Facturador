@@ -19,6 +19,7 @@
                     <thead>
                         <tr>
                             <th>Compañía</th>
+                            <th>Departamento</th>
                             <th>Municipio</th>
                             <th>Id</th>
                             <th>Identificación</th>
@@ -56,6 +57,7 @@ $(document).ready(function ()
             columns:
             [
                 {data: 'company'},
+                {data: 'Department'},
                 {data: 'municipality'},
                 {data: 'id'},
                 {data: 'identification'},
