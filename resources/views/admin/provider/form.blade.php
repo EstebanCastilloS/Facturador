@@ -37,12 +37,30 @@
             <input type="text" name="identification" class="form-control" value="{{ old('identification', $provider->identification ?? '') }}" placeholder="Identificación">
         </div>
     </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label for="identification_type_id">Tipo de Identificación</label>
+        <div class="select">
+            <select id="identification_type_id" name="identification_type_id" class="form-control selectpicker" data-live-search="true" required>
+                <option {{ ($provider->identification_type_id ?? '') == '' ? "selected" : "" }} disabled>Seleccionar Tipo de Identificación</option>
+                @foreach($identification_types as $identification_type)
+                    @if($identification_type->id == ($provider->identification_type_id ?? ''))
+                        <option value="{{ $identification_type->id }}" selected>{{ $identification_type->name }}</option>
+                    @else
+                        <option value="{{ $identification_type->id }}">{{ $identification_type->name }}</option>
+                    @endif
+                @endforeach
+            </select>
+        </div>
+    </div>
+
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="form-group">
             <label for="name">Nombre</label>
             <input type="text" name="name" class="form-control" value="{{ old('name', $provider->name ?? '') }}" placeholder="Nombre">
         </div>
     </div>
+
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="form-group">
             <label for="address">Dirección</label>

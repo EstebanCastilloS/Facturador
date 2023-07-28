@@ -26,6 +26,7 @@ class CreateProvidersTable extends Migration
             //laves foraneas
             $table->foreignId('municipality_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('company_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('identification_type_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

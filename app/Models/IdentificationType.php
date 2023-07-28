@@ -18,4 +18,10 @@ class IdentificationType extends Model
 
     protected $fillable = ['name','code'];
     protected $guarded = ['id'];
+
+    //Un tipo de identificacion tiene muchos proveedores
+    public function providers()
+    {
+        return $this->hasMany(Provider::class);
+    }
 }

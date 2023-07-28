@@ -6,6 +6,7 @@ use App\Models\Provider;
 use App\Http\Requests\StoreProviderRequest;
 use App\Http\Requests\UpdateProviderRequest;
 use App\Models\Company;
+use App\Models\IdentificationType;
 use App\Models\Municipality;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
@@ -32,6 +33,9 @@ class ProviderController extends Controller
             ->addColumn('company', function (Provider $provider) {
                 return $provider->company->name;
             })
+            ->addColumn('identification_type', function (Provider $provider) {
+                return $provider->identificationType->name;
+            })
             ->addColumn('edit', 'admin/provider/actions')
             ->rawColumns(['edit'])
             ->make(true);
@@ -49,7 +53,8 @@ class ProviderController extends Controller
     {
         $municipalities = Municipality::get();
         $companies = Company::get();
-        return view('admin.provider.create', compact('municipalities','companies'));
+        $identification_types = IdentificationType::get();
+        return view('admin.provider.create', compact('municipalities','companies','identification_types'));
     }
 
     /**
@@ -64,6 +69,7 @@ class ProviderController extends Controller
         $provider->company_id = $request->company_id;
         $provider->municipality_id = $request->municipality_id;
         $provider->identification = $request->identification;
+        $provider->identification_type_id = $request->identification_type_id;
         $provider->name = $request->name;
         $provider->address = $request->address;
         $provider->email = $request->email;
@@ -95,7 +101,8 @@ class ProviderController extends Controller
     {
         $municipalities = Municipality::get();
         $companies = Company::get();
-        return view('admin.provider.edit', compact('municipalities', 'companies', 'provider'));
+        $identification_types = IdentificationType::get();
+        return view('admin.provider.edit', compact('municipalities', 'companies','identification_types', 'provider'));
     }
 
     /**
@@ -110,6 +117,7 @@ class ProviderController extends Controller
         $provider->company_id = $request->company_id;
         $provider->municipality_id = $request->municipality_id;
         $provider->identification = $request->identification;
+        $provider->identification_type_id = $request->identification_type_id;
         $provider->name = $request->name;
         $provider->address = $request->address;
         $provider->email = $request->email;

@@ -22,6 +22,7 @@
                             <th>Municipio</th>
                             <th>Id</th>
                             <th>Identificación</th>
+                            <th>Tipo de Identificación</th>
                             <th>Nombre</th>
                             <th>Dirección</th>
                             <th>Correo Eléctronico</th>
@@ -58,6 +59,7 @@ $(document).ready(function ()
                 {data: 'municipality'},
                 {data: 'id'},
                 {data: 'identification'},
+                {data: 'identification_type'},
                 {data: 'name'},
                 {data: 'address'},
                 {data: 'email'},
