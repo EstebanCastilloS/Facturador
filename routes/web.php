@@ -3,6 +3,7 @@
 use App\Http\Controllers\BrancheController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\IdentificationTypeController;
@@ -50,12 +51,14 @@ Route::resource('category',CategoryController::class);
 Route::resource('product',ProductController::class);
 Route::resource('identification_type', IdentificationTypeController::class);
 Route::resource('provider',ProviderController::class);
+Route::resource('customer', CustomerController::class);
 
 
 
 Route::get('company/create/{id}', [CompanyController::class, 'getMunicipalities']);
 Route::get('branche/create/{id}', [BrancheController::class, 'getMunicipalities']);
 Route::get('provider/create/{id}', [ProviderController::class, 'getMunicipalities']);
+Route::get('customer/create/{id}', [CustomerController::class, 'getMunicipalities']);
 
 
 

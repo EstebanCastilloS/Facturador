@@ -43,4 +43,9 @@ class Municipality extends Model
     {
         return $this->hasMany(Provider::class);
     }
+
+    public function customers()
+    {
+        return $this->hasMany(Customer::class);
+    }
 }
