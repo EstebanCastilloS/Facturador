@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Http\Controllers\BrancheController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\UseerController;
 use Illuminate\Database\Seeder;
 
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
        $this->call(ProductsTableSeeder::class);
        $this->call(IdentificationTypesTableSeeder::class);
        $this->call(ProvidersTableSeeder::class);
+       $this->call(CustomersTableSeeder::class);
 
     }
 }
