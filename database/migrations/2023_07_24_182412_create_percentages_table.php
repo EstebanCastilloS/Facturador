@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUseersTable extends Migration
+class CreatePercentagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateUseersTable extends Migration
      */
     public function up()
     {
-        Schema::create('useers', function (Blueprint $table) {
+        Schema::create('percentages', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name',45);
-            $table->string('email',45);
-            $table->string('user_role',45);
-            $table->string('address',45);
-            $table->enum('status',['active','inactive'])->default('active');
+            $table->decimal('value_percentage',10,2);
+            $table->string('comments',45);
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateUseersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('useers');
+        Schema::dropIfExists('percentages');
     }
 }

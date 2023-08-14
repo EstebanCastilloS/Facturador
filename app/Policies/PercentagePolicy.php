@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Useer;
+use App\Models\Percentage;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UseerPolicy
+class PercentagePolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class UseerPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Useer  $useer
+     * @param  \App\Models\Percentage  $percentage
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Useer $useer)
+    public function view(User $user, Percentage $percentage)
     {
         //
     }
@@ -48,10 +48,10 @@ class UseerPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Useer  $useer
+     * @param  \App\Models\Percentage  $percentage
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Useer $useer)
+    public function update(User $user, Percentage $percentage)
     {
         //
     }
@@ -60,10 +60,10 @@ class UseerPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Useer  $useer
+     * @param  \App\Models\Percentage  $percentage
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Useer $useer)
+    public function delete(User $user, Percentage $percentage)
     {
         //
     }
@@ -72,10 +72,10 @@ class UseerPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Useer  $useer
+     * @param  \App\Models\Percentage  $percentage
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Useer $useer)
+    public function restore(User $user, Percentage $percentage)
     {
         //
     }
@@ -84,10 +84,10 @@ class UseerPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Useer  $useer
+     * @param  \App\Models\Percentage  $percentage
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Useer $useer)
+    public function forceDelete(User $user, Percentage $percentage)
     {
         //
     }

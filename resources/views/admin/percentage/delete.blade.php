@@ -1,16 +1,16 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-delete-{{ $id }}">
-    {!! Form::open(['method' => 'DELETE', 'route' => ['useer.destroy', $id]]) !!}
+    {!! Form::open(['method' => 'DELETE', 'route' => ['percentage.destroy', $id]]) !!}
     {!! Form::token() !!}
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Eliminar Usuario</h5>
+                    <h4 class="modal-title">Eliminar Cantidad de Porcentage</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>¿Está seguro que desea eliminar este Usuario de forma permanente? Esta acción no se podrá deshacer.</p>
+                    <p>¿Está seguro que desea eliminar esta Cantidad de Porcentage de forma permanente? Esta acción no se podrá deshacer.</p>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-gris" type="button" data-dismiss="modal">Cerrar</button>

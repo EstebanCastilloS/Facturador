@@ -28,9 +28,7 @@ class CreateBranchesTable extends Migration
             $table->foreignId('company_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             //lave foranea municipality
             $table->foreignId('municipality_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            //AGREGADO
-            //llave foranea useer
-            // $table->foreignId('useer_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            //$table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamps();
         });

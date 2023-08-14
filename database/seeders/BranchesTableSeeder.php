@@ -43,6 +43,7 @@ class BranchesTableSeeder extends Seeder
                 'contact' => 'faceboo',
                 'company_id' => '1',
                 'municipality_id' => '26',
+
              ),
              2 =>
              array (
@@ -55,6 +56,7 @@ class BranchesTableSeeder extends Seeder
                 'contact' => 'faceboo',
                 'company_id' => '3',
                 'municipality_id' => '18',
+
              ),
              3 =>
              array (
@@ -67,6 +69,7 @@ class BranchesTableSeeder extends Seeder
                 'contact' => 'faceboo',
                 'company_id' => '4',
                 'municipality_id' => '20',
+
              ),
 
          ));

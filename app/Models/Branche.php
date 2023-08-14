@@ -16,10 +16,21 @@ class Branche extends Model
 
     public $timestamps = True;
 
-    protected $fillable = ['name', 'nit', 'address', 'email', 'phone', 'contact', 'company_id', 'municipality_id'];
+    protected $fillable =
+    [
+        'name',
+        'nit',
+        'address',
+        'email',
+        'phone',
+        'contact',
+        'company_id',
+        'municipality_id',
+
+    ];
     protected $guarded = ['id'];
 
-
+    //Municipality
     public function municipality()
     {
         return $this->belongsTo(Municipality::class);
@@ -38,6 +49,16 @@ class Branche extends Model
     // {
     //     return $this->hasMany(Useer::class);
     // }
+
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 
 
 }

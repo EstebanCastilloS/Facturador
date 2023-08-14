@@ -33,4 +33,6 @@ class Customer extends Model
     {
         return $this->belongsTo(IdentificationType::class);
     }
+
+
 }

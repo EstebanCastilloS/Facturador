@@ -27,6 +27,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'user_role',
+        'address',
+        'status',
+        'branche_id',
+
     ];
 
     /**
@@ -58,4 +63,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
+
+    public function branche()
+    {
+        return $this->belongsTo(Branche::class);
+    }
 }
