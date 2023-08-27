@@ -28,6 +28,17 @@ class productPurchase extends Model
     ];
     protected $guarded = ['id'];
 
+    //-- product
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    //purchase
+    public function purchase()
+    {
+        return $this->belongsTo(Purchase::class);
+    }
 }
 
 

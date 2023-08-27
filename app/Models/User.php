@@ -73,4 +73,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Branche::class);
     }
+
+    public function payPurchase()
+    {
+        return $this->hasMany(payPurchase::class);
+    }
 }

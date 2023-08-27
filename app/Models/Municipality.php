@@ -16,7 +16,12 @@ class Municipality extends Model
 
     public $timestamps = True;
 
-    protected $fillable = ['name', 'code', 'department_id'];
+    protected $fillable =
+    [
+        'name',
+        'code',
+        'department_id'
+    ];
     protected $guarded = ['id'];
 
     //Un municipio pertenece a un departamento

@@ -34,7 +34,7 @@ class Purchase extends Model
     ];
     protected $guarded = ['id'];
 
-    //conexión
+    //provider
     public function provider()
     {
         return $this->belongsTo(Provider::class);
@@ -49,6 +49,23 @@ class Purchase extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function payPurchases()
+    {
+        return $this->hasMany(payPurchase::class);
+    }
+
+    // -- productPurchases
+    public function productPurchases()
+    {
+        return $this->hasMany(productPurchase::class);
+    }
+
+    // -- payPurchase
+    public function payPurchase()
+    {
+        return $this->hasMany(payPurchase::class);
     }
 
 

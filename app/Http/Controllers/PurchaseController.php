@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Purchase;
 use App\Http\Requests\StorePurchaseRequest;
 use App\Http\Requests\UpdatePurchaseRequest;
+use App\Models\Bank;
 use App\Models\Branche;
+use App\Models\Card;
+use App\Models\paymentMethod;
 use App\Models\Percentage;
 use App\Models\Product;
 use App\Models\productPurchase;
 use App\Models\Provider;
+use App\Models\pyment_form;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -46,6 +50,7 @@ class PurchaseController extends Controller
      */
     public function create()
     {
+
         $providers = Provider::get();
         $products = Product::get();
         $percentages = Percentage::get();
@@ -73,7 +78,7 @@ class PurchaseController extends Controller
 
         $purchase = new purchase;
 
-        //cuando se tenga las llaves foraneas
+        //cuando se tenga las llaves foraneas Purchase
         $purchase->provider_id = $request->provider_id;
         $purchase->branche_id = $user->branche_id;
         $purchase->percentage_id = $request->percentage_id[0];
@@ -179,5 +184,23 @@ class PurchaseController extends Controller
     public function destroy(Purchase $purchase)
     {
         //
+    }
+
+    public function purchasePay($id)
+    {
+
+        $purchases = Purchase::findOrFail($id);
+
+        //dd($purchases->provider->name);
+
+
+
+        $paymentForms = pyment_form::get();
+        $purchase = Purchase::get();
+        $paymentMethods = paymentMethod::get();
+        $banks = Bank::get();
+        $cards = Card::get();
+
+        return view('admin.payPurchase.create', compact('purchases','paymentForms','purchase', 'paymentMethods','banks','cards'));
     }
 }

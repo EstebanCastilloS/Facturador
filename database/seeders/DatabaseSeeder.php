@@ -29,8 +29,9 @@ class DatabaseSeeder extends Seeder
        $this->call(ProvidersTableSeeder::class);
        $this->call(CustomersTableSeeder::class);
        $this->call(PercentageSeeder::class);
-
-
-
+       $this->call(CardsTableSeeder::class);
+       $this->call(BanksTableSeeder::class);
+       $this->call(PaymentMethodsTableSeeder::class);
+       $this->call(PymentFormsTableSeeder::class);
     }
 }

@@ -16,7 +16,15 @@ class Product extends Model
 
     public $timestamps = True;
 
-    protected $fillable = ['name', 'price_purchase','price_invoice','stock','status', 'category_id'];
+    protected $fillable =
+    [
+        'name',
+        'price_purchase',
+        'price_invoice',
+        'stock',
+        'status',
+        'category_id'
+    ];
     protected $guarded = ['id'];
 
     //
@@ -24,4 +32,11 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    // -- productPurchases
+    public function productPurchases()
+    {
+        return $this->hasMany(productPurchase::class);
+    }
 }
+

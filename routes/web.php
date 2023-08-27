@@ -1,17 +1,24 @@
 <?php
 
+use App\Http\Controllers\BankController;
 use App\Http\Controllers\BrancheController;
+use App\Http\Controllers\CardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\IdentificationTypeController;
+use App\Http\Controllers\MethodPaymentController;
 use App\Http\Controllers\MunicipalityController;
+use App\Http\Controllers\PayController;
+use App\Http\Controllers\PaymentMethodController;
+use App\Http\Controllers\PayPurchaseController;
 use App\Http\Controllers\PercentageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProviderController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\PymentFormController;
 use App\Http\Controllers\QualificationController;
 use App\Http\Controllers\ServiceeController;
 use App\Http\Controllers\StudentController;
@@ -58,6 +65,11 @@ Route::resource('customer', CustomerController::class);
 Route::resource('purchase', PurchaseController::class);
 Route::resource('percentage',PercentageController::class);
 Route::resource('user', UserController::class);
+Route::resource('pymentForm',PymentFormController::class);
+Route::resource('card',CardController::class);
+Route::resource('bank',BankController::class);
+Route::resource('paymentMethod',PaymentMethodController::class);
+Route::resource('payPurchase',PayPurchaseController::class);
 
 
 
@@ -67,7 +79,7 @@ Route::get('provider/create/{id}', [ProviderController::class, 'getMunicipalitie
 Route::get('customer/create/{id}', [CustomerController::class, 'getMunicipalities']);
 
 
-
+Route::get('purchase/purchasePay/{id}',[PurchaseController::class, 'purchasePay'])->name('purchasePay');
 
 // Route::resource('servicee',ServiceeController::class);
 // Route::resource('employee',EmployeeController::class);
